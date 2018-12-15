@@ -1,0 +1,27 @@
+{
+  "name": "iss-finder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbgoseco/ISS-finder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mbgoseco/ISS-finder/issues"
+  },
+  "homepage": "https://github.com/mbgoseco/ISS-finder#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "superagent": "^4.0.0"
+  }
+}
