@@ -51,6 +51,9 @@ nav ul li a {
   box-shadow: 0px 5px 5px cyan;
   background: transparent
 }
+.container1 img {
+  
+}
 
 main {
   width: 100%;
@@ -58,14 +61,16 @@ main {
  
 }
 
-
  footer {
-  height: 25%;
+  height: 15%;
   width: 100%;
   position: absolute;
   bottom: 0;
   border: 8px solid aquamarine;
-  background: transparent;
+  background-image: url('../Styles/assets/moondark.png'); 
+   background-repeat: no-repeat;
+  background-size: cover; 
+
 
   }
 
