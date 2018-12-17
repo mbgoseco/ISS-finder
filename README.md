@@ -7,7 +7,7 @@
 
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for a Code Fellows 301 class. (i.e. What's your problem domain?) -->
 
-ISS Finder is an application that allows you to find out where the ISS Satilite is in comparison to the location you enter, preferably yours, to discover if the satilite is in radius to your location. If it is you will be able to see it from your location. If it is not, the search will populate dates and times of the when the satilite will be visible from your location.
+ISS Finder is an application that allows you to find out where the ISS satellite is in comparison to the location you enter, preferably yours, to discover if the satellite is in radius to your location. If it is you will be able to see it from your location. If it is not, the search will populate dates and times of the when the satellite will be visible from your location.
 
 ## Getting Started
 
@@ -37,7 +37,7 @@ ISS Finder is an application that allows you to find out where the ISS Satilite 
 
 * 12.15.2019 1:00pm - Application has basic CSS and animication.
 * 12.15.2019 5:00pm - Application is able to communicate with API sources.
-* 12.17.2019 1:00pm -
+* 12.17.2019 1:00pm - Appilcation is able to get data now from SSI API.
 * 12.17.2019 5:00pm -
 * 12.18.2019 9:00am -
 * 12.18.2019 1:00pm -
@@ -54,7 +54,7 @@ ISS Finder is an application that allows you to find out where the ISS Satilite 
 
 ## Credits & Collaborations
 
-<!--Give credit (and a link) to other people or resources that helped you build this application.-->
+<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
 ## Conflict Plan
 
