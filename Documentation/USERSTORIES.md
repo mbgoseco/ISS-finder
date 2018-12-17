@@ -20,5 +20,5 @@ ISS FINDER
 
 * As a user, I want to get the weather from my search, so that I know how to dress appropiately.
 * As a user, I want to see a basic animiation for the home page.
-* As a user/developer, I want to access a store API, so that I can see if telescopes are on sale.
+* As a user, I want to access a store API, so that I can see if telescopes are on sale.
 * As a user, I want to list astronauts currently in space, so that I can know.
