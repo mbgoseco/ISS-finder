@@ -1,33 +1,37 @@
-# Minimum Viable Product (MVP)
+# PROJECT SCOPE
 
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
+ISS FINDER
 
-# Stretch Goals
+## Minimum Viable Product (MVP)
 
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
-*As a user/develop, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+
+## Stretch Goals
+
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
+* As a user/developer, I want _____, so that _____
