@@ -1,0 +1,57 @@
+body {
+  background: #111;
+  margin: 0px;
+}
+
+.stars {
+  width: 100%;
+  height: 100vh;
+  margin: 0px auto;
+  background-color: #000;
+  background-image: url('../Styles/assets/newEarth.png'), url('../Styles/assets/empty-stars.png'), url('../Styles/assets/stars4.jpg');
+  background-position: -120% 70px, 0px 0px, 0px 0px;
+  background-repeat: no-repeat, repeat, repeat;
+  animation: animate-background linear 50s infinite;
+}
+  @keyframes animate-background {
+    from { background-position: 120% -1px, 0px 0px, 0px 0px;  }
+    to {background-position: -20% 1px, -1000px 0px, -500px 0px;  }
+  }
+
+
+
+body {
+ font-family: 'Poiret One', cursive;
+ margin: 0;
+ 
+}
+nav {
+  background: transparent;
+  height: 10vw;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 5px 5px #e40dae;
+}
+nav li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 5vw;
+  color: #e40dae;
+  text-align: center;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: purple;
+
+}
+
+/* start of the content */
+/* 
+header {
+  width: 100%;
+/* } 
+
+ 
