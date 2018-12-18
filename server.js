@@ -24,7 +24,7 @@ function handleError(err, res) {
 }
 
 app.get('/', (req, res) => {
-  res.render('./test');
+  res.render('./index');
 });
 app.get('/userLoc', getUserLoc);
 app.get('/userAddress', getUserAddress);

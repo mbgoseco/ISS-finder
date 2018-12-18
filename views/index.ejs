@@ -1,13 +1,15 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>ISS Space</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+    crossorigin=""></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./public/styles/reset.css" />
-  <link rel=" stylesheet" href="./public/styles/styles.css" />
+  <link rel="stylesheet" type="text/css" href="/styles/reset.css" />
+  <link rel="stylesheet" type="text/css" href="/styles/styles.css" />
   <style>
     @import url('https://fonts.googleapis.com/css?family=Poiret+One');
   </style>
@@ -26,16 +28,15 @@
         <!-- <li><a href="">Start Page</a></li> -->
         <li>ISS SPACE TRACKER</li>
         <!-- <li><a href="">Go to bottom of page </a></li>  -->
-        <img src="./public/styles/assets/ISS.png" alt="ISS">
+        <img src="/styles/assets/ISS.png" alt="ISS">
       </ul>
     </nav>
 
     <p id="introp">The International Space Station is a space station, or a habitable artificial satellite, in low Earth orbit moving at close to 28,000 km/h. In 24 hours, the space station makes 16 orbits of Earth, traveling through 16 sunrises and sunsets so its location changes really fast! Where is it right now? Type in your location to find out the next time it passes!
     </p>
 
-    <section id="map">
-      
-
+    <section class="mapContainer">
+      <div id="map"></div>
     </section>
     <main>
       <div class="container2">
@@ -99,5 +100,8 @@
     </footer>
   </section>
 </body>
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&libraries=geometry"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="scripts/app.js"></script>
 </html>

@@ -29,19 +29,19 @@ a {
 }
 
 #ryna {
-  background-image: url('../Styles/assets/profilepic.jpg');
+  background-image: url('../styles/assets/profilepic.jpg');
 }
 
 #andrew {
-  background-image: url('../Styles/assets/drew.jpg');
+  background-image: url('../styles/assets/drew.jpg');
 }
 
 #mike {
-  background-image: url('../Styles/assets/IMG956438.jpg');
+  background-image: url('../styles/assets/IMG956438.jpg');
 }
 
 #regan {
-  background-image: url('../Styles/assets/Capture.PNG');
+  background-image: url('../styles/assets/Capture.PNG');
 }
 
 .back {
@@ -65,8 +65,12 @@ a {
   height: 15vw;
 }
 
-.bigcontainer .flipcontainer div.back {
+div.back {
   height: 15vw;
+}
+
+.flipcontainer {
+  height: 28vh;
 }
 
 .bigcontainer {
@@ -111,19 +115,19 @@ nav ul img {
   margin: 0 auto;
 }
 
-#map {
+.mapContainer {
   width: 100%;
   height: 70%;
   box-shadow: 0px 5px 5px cyan;
   background: transparent;
   
 }
-.container1 img {
-    display: block;
+#map {
     padding-top: 5%;
     margin: 0 auto;
-    height: 50%;
-    width: 40%;
+    width: 85%;
+    height: 75vh;
+    margin-bottom: 2vh;
 }
 .container2 {
   margin: 0 auto;
@@ -222,7 +226,7 @@ nav ul img {
   transform: perspective( 600px) rotateY( 180deg );
   background: rgb(42, 31, 92);  
   width: 20%; 
-  height: 20%; 
+  height: 9%; 
   border-radius:7px;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -245,11 +249,11 @@ nav ul img {
 
 main {
   width: 100%;
-  height: 70%; 
+  height: 75vh; 
 }
 
  footer {
-  height: 40%;
+  height: 33vh;
   width: 100%;
   bottom: 0;
   border: 8px solid aquamarine;
@@ -257,11 +261,3 @@ main {
   background-repeat: no-repeat;
   background-size: cover; 
   }
-
-
-
-
-
-
-
-
