@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+  width: 100%;
   font-family: 'Poiret One', cursive;
 }
 
@@ -31,18 +32,21 @@ nav {
 }
 nav li {
   list-style: none;
-  display: inline-block;
-  margin-right: 5vw;
   color: #e40dae;
   text-align: center;
   font-size: 4vw;
-  padding-left: 8vw;
 }
 
 nav ul li a {
   text-decoration: none;
   color: purple;
   font-size: 2vw;
+}
+nav ul img {
+  
+
+  display: block;
+  margin: 0 auto;
 }
 
 .container1 {
@@ -119,6 +123,61 @@ nav ul li a {
   height: 30%;
 
 }
+.flipwrapper {
+  
+  margin: 0 auto;
+  height: 55%;
+  width: 100%;
+  margin-top: 2vw;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+ 
+}
+
+.flip3d {
+  width: 25%;
+  height: 20%;
+  margin: 10px;
+  float: left;
+}
+.flip3d > .front {
+  position: absolute;
+  -webkit-transform: perspective( 600px) rotateY( 0deg );
+  transform: perspective( 600px) rotateY( 0deg );
+  background: purple;  
+  width: 20%; 
+  height:20%; 
+  border-radius:7px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: -webkit-transform .3s linear 0s;
+  transition: transform .5s linear 0s;
+}
+.flip3d > .back {
+  position: absolute;
+  -webkit-transform: perspective( 600px) rotateY( 180deg );
+  transform: perspective( 600px) rotateY( 180deg );
+  background: rgb(42, 31, 92);  
+  width: 20%; 
+  height: 20%; 
+  border-radius:7px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: -webkit-transform .1s linear 0s;
+  transition: transform .5s linear 0s;
+}
+
+.flip3d:hover > .front {
+  -webkit-transform: perspective( 600px) rotateY( -180deg );
+  transform: perspective( 600px) rotateY( -180deg );
+
+}
+.flip3d:hover > .back {
+  -webkit-transform: perspective( 600px) rotateY( 0deg );
+  transform: perspective( 600px) rotateY( 0deg );
+
+}
 
 
 
@@ -128,9 +187,8 @@ main {
 }
 
  footer {
-  height: 15%;
+  height: 40%;
   width: 100%;
- 
   bottom: 0;
   border: 8px solid aquamarine;
   background-image: url('../Styles/assets/moondark.png'); 
