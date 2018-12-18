@@ -1,7 +1,6 @@
 {
   "name": "iss-finder",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -22,7 +21,9 @@
     "dotenv": "^6.2.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "got": "^9.4.0",
+    "jshint": "^2.9.7",
     "superagent": "^4.0.0"
-  }
+  },
+  "keywords": [],
+  "description": ""
 }

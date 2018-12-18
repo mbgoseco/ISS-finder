@@ -1,0 +1,205 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Poiret One', cursive;
+}
+
+ 
+.bigcontainer {
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+  padding: 0;
+  margin: 0px auto;
+  background-color: #000;
+  background-image: url('../Styles/assets/newEarth.png'), url('../Styles/assets/empty-stars.png'), url('../Styles/assets/stars4.jpg');
+  background-position: -120% 70px, 0px 0px, 0px 0px;
+  background-repeat: no-repeat, repeat, repeat;
+  animation: animate-background linear 50s infinite;
+}
+  @keyframes animate-background {
+    from { background-position: 120% -1vw, 0px 0px, 0px 0px;  }
+    to {background-position: -20% 1vw, -1000px 0px, -500px 0px;  }
+  }
+nav {
+  background: transparent;
+  height: 10vw;
+  width: 100%;
+  align-items: center;
+  box-shadow: 0 5px 5px #e40dae;
+}
+nav li {
+  list-style: none;
+  color: #e40dae;
+  text-align: center;
+  font-size: 4vw;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: purple;
+  font-size: 2vw;
+}
+nav ul img {
+  
+
+  display: block;
+  margin: 0 auto;
+}
+
+.container1 {
+  width: 100%;
+  height: 70%;
+  box-shadow: 0px 5px 5px cyan;
+  background: transparent;
+  
+}
+.container1 img {
+    display: block;
+    padding-top: 5%;
+    margin: 0 auto;
+    height: 50%;
+    width: 40%;
+}
+.container2 {
+  margin: 0 auto;
+  height: 90%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2vw;
+  
+}
+.box {
+  margin: 10px;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 3px solid midnightblue;
+
+}
+
+ .box .innerbox1 {
+   width: 100%;
+   height: 60%;
+   background:transparent;
+}
+.box .separate {
+  width: 100%;
+  height: 10%;
+  border: 3px solid midnightblue;
+ 
+}
+
+.box .separate h2 {
+  color: deeppink;
+  text-align: center;
+  font-size: 4vw;
+  font-family: -webkit-body;
+}
+
+.innerbox2 p {
+  color: deeppink;
+  text-align: center;
+  font-size: 1vw;
+  font-family: -webkit-body;
+  padding-top: 50px;
+  font-style: italic;
+}
+
+
+
+
+.box .innerbox2 {
+  width: 100%;
+  height: 30%;
+
+}
+.flipwrapper {
+  
+  margin: 0 auto;
+  height: 55%;
+  width: 100%;
+  margin-top: 2vw;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+ 
+}
+
+.flip3d {
+  width: 25%;
+  height: 20%;
+  margin: 10px;
+  float: left;
+}
+.flip3d > .front {
+  position: absolute;
+  -webkit-transform: perspective( 600px) rotateY( 0deg );
+  transform: perspective( 600px) rotateY( 0deg );
+  background: purple;  
+  width: 20%; 
+  height:20%; 
+  border-radius:7px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: -webkit-transform .3s linear 0s;
+  transition: transform .5s linear 0s;
+}
+.flip3d > .back {
+  position: absolute;
+  -webkit-transform: perspective( 600px) rotateY( 180deg );
+  transform: perspective( 600px) rotateY( 180deg );
+  background: rgb(42, 31, 92);  
+  width: 20%; 
+  height: 20%; 
+  border-radius:7px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: -webkit-transform .1s linear 0s;
+  transition: transform .5s linear 0s;
+}
+
+.flip3d:hover > .front {
+  -webkit-transform: perspective( 600px) rotateY( -180deg );
+  transform: perspective( 600px) rotateY( -180deg );
+
+}
+.flip3d:hover > .back {
+  -webkit-transform: perspective( 600px) rotateY( 0deg );
+  transform: perspective( 600px) rotateY( 0deg );
+
+}
+
+
+
+main {
+  width: 100%;
+  height: 70%; 
+}
+
+ footer {
+  height: 40%;
+  width: 100%;
+  bottom: 0;
+  border: 8px solid aquamarine;
+  background-image: url('../Styles/assets/moondark.png'); 
+  background-repeat: no-repeat;
+  background-size: cover; 
+  }
+
+
+
+
+
+
+
+
