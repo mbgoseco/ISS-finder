@@ -35,11 +35,11 @@ ISS Finder is an application that allows you to find out where the ISS satellite
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
 01-01-2001 4:59pm - Application now has a fully-functional express server, with GET and POST routes for the book resource. -->
 
-* 12.15.2019 1:00pm - Application has basic CSS and animication.
+* 12.15.2019 1:00pm - Application has basic CSS and animation.
 * 12.15.2019 5:00pm - Application is able to communicate with API sources.
 * 12.17.2019 1:00pm - Appilcation is able to get data now from SSI API.
-* 12.17.2019 5:00pm -
-* 12.18.2019 9:00am -
+* 12.17.2019 5:00pm - Application has placeholders for the geo location, about us, and footer.
+* 12.18.2019 9:00am - Application has basic search and reverse search functionality.
 * 12.18.2019 1:00pm -
 * 12.18.2019 5:00pm -
 * 12.19.2019 9:00am -
