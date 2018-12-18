@@ -6,6 +6,10 @@ body {
   font-family: 'Poiret One', cursive;
 }
 
+a {
+  color: white;
+}
+
 #introp {
   padding: 30px;
   text-align: center;
@@ -45,12 +49,24 @@ body {
   text-align: center;
   color: white;
   font-size: x-large;
+  box-sizing: border-box;
+  overflow: scroll;
 }
 
 .front {
   text-align: center;
-  color: #e40dae;
+  color: rgb(36, 122, 235);
   font-size: xx-large;
+  box-sizing: border-box;
+}
+
+.bigcontainer .flipcontainer div.front {
+  background-size: 100%;
+  height: 15vw;
+}
+
+.bigcontainer .flipcontainer div.back {
+  height: 15vw;
 }
 
 .bigcontainer {
