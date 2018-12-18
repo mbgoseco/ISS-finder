@@ -13,6 +13,46 @@ body {
   font-size: xx-large;
 }
 
+#authors {
+  padding: 30px;
+  text-align: center;
+  color: white;
+  font-size: xx-large;
+}
+
+#ryna, #andrew, #mike, #regan {
+  background-repeat: no-repeat;
+}
+
+#ryna {
+  background-image: url('../Styles/assets/profilepic.jpg');
+}
+
+#andrew {
+  background-image: url('../Styles/assets/drew.jpg');
+}
+
+#mike {
+  background-image: url('../Styles/assets/IMG956438.jpg');
+}
+
+#regan {
+  background-image: url('../Styles/assets/Capture.PNG');
+}
+
+.back {
+  padding: 30px;
+  text-align: center;
+  color: white;
+  font-size: x-large;
+}
+
+.front {
+  text-align: center;
+  color: #e40dae;
+  font-size: xx-large;
+}
+
 .bigcontainer {
   width: 100%;
   min-height: 100%;
