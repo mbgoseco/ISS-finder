@@ -6,7 +6,13 @@ body {
   font-family: 'Poiret One', cursive;
 }
 
- 
+#introp {
+  padding: 30px;
+  text-align: center;
+  color: white;
+  font-size: xx-large;
+}
+
 .bigcontainer {
   width: 100%;
   min-height: 100%;
