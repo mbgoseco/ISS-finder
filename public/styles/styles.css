@@ -163,7 +163,11 @@ nav ul img {
   width: 100%;
   height: 10%;
   border: 3px solid midnightblue;
- 
+}
+
+.left, .mid, .right {
+  color: white;
+  font-weight: bold;
 }
 
 .box .separate h2 {
