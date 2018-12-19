@@ -30,6 +30,26 @@ app.get('/userLoc', getUserLoc);
 app.get('/userAddress', getUserAddress);
 app.get('/issLoc', getISSLoc);
 app.get('/search', getInputLoc);
+app.get('/weather', fetchWeather );
+
+function fetchWeather(req,res) {
+  console.log('made it to the weather function');
+ 
+ let weatherinfo = req;
+ console.log(weatherinfo);
+  const url = `https://api.darksky.net/forecast/${process.env.WEATHER_API_KEY}/${req.query.data.lat},${req.query.data.lng}`;
+  
+  return superagent.get(url)
+    .then(data => {
+      const weatherSummaries = new Weather(data.body);
+      console.log(data.body);
+        return weatherSummaries;
+      })
+      .then(results => {
+         res.send(results);
+      })
+    .catch(error => handleError(error, res));
+}
 
 function getUserLoc(req, res) {
   const url = `https://www.googleapis.com/geolocation/v1/geolocate?key=${process.env.GOOGLE_API_KEY}`;
@@ -95,6 +115,8 @@ function getInputLoc(req, res) {
     }).catch(error => handleError(error, res));
 }
 
+// Models 
+
 function UserLoc(data) {
   this.lat = data.lat;
   this.lng = data.lng;
@@ -109,4 +131,13 @@ function Location(data) {
   this.address = data.formatted_address;
   this.lat = data.geometry.location.lat;
   this.lng = data.geometry.location.lng;
+}
+
+function Weather(data) {
+this.forecast = data.currently.summary;
+this.visibility = data.currently.visibility;
+this.windGust = data.currently.windGust;
+this.minutely = data.minutely.summary;
+this.hourly = data.hourly.summary;
+this.daily = data.daily.summary;
 }

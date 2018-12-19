@@ -22,7 +22,7 @@ $.ajax({
       id: 'mapbox.streets'
     }).addTo(mymap);
     issMarker = L.marker([issCoords.lat, issCoords.lng]).addTo(mymap);
-    issCirc = L.circle([issCoords.lat, issCoords.lng], {radius: 2270000}).addTo(mymap);
+    issCirc = L.circle([issCoords.lat, issCoords.lng], { radius: 2270000 }).addTo(mymap);
     issMapUpdate();
   }).catch(error => console.error(error));
 console.log('ISS coords: ', issCoords);
@@ -36,6 +36,7 @@ $.ajax({
     userLoc.lat = location.lat;
     userLoc.lng = location.lng;
     getUserAddress(location);
+
   }).catch(error => console.error(error));
 console.log('user location: ', userLoc);
 
@@ -57,12 +58,36 @@ function issMapUpdate() {
 }
 
 function getUserAddress(location) {
-  $.get('/userAddress', {data: location})
+  $.get('/userAddress', { data: location })
     .then(address => {
       console.log('user address', address);
       userLoc.address = address;
     }).catch(error => console.error(error));
+
+
 }
+function getWeather() {
+  $.ajax({
+    url: '/userLoc',
+    method: 'GET'
+  })
+    .then(location => {
+      userLoc.lat = location.lat;
+      userLoc.lng = location.lng;
+
+      return $.get('/weather', { data: location })
+    })
+    .then(results => {
+      console.log('current forecast ' + results.forecast)
+      console.log('visibility is ' + results.visibility)
+      console.log('windgusts are ' + results.windGust)
+      console.log('on the minute ' + results.minutely)
+      console.log('hourly forecast ' + results.hourly)
+      console.log('daily forecast ' + results.daily)
+    })
+    .catch(error => console.error(error))
+}
+getWeather();
 
 $('#searchForm').on('submit', getSearchLoc);
 
@@ -74,7 +99,7 @@ function getSearchLoc(event) {
   $.ajax({
     url: '/search',
     method: 'GET',
-    data: {data: input}
+    data: { data: input }
   })
     .then(location => {
       locationCoords.lat = location.lat;
@@ -92,5 +117,6 @@ function getSearchLoc(event) {
       $('#distance').text(`Distance between ${location.address} and ISS is ${distance} meters.`);
     }).catch(error => console.error(error));
 }
+
 
 

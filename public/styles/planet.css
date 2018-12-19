@@ -1,0 +1,28 @@
+body {
+    width: 100%;
+    min-height: 100%;
+    position: relative;
+    padding: 0;
+    margin: 0px auto;
+    background-color: #000;
+    background-image: url('../styles/assets/newEarth.png'), url('../styles/assets/empty-stars.png'), url('../styles/assets/stars4.jpg');
+    background-position: 120% 70px, 0px 0px, 0px 0px;
+    background-repeat: no-repeat, repeat, repeat;
+    animation: animate-background linear 50s infinite;
+  }
+    @keyframes animate-background {
+      from { background-position: 120% 70px,  0px 0px, 0px 0px;  }
+      to {background-position: -20% 70px, -1000px 0px, -500px 0px;  }
+
+    }
+
+
+    .sun {
+      height: 100%;
+      width: 50vh;
+      border: 3px solid white;
+      background-image: url('../styles/assets/newsun.png'); 
+      background-repeat: no-repeat;
+      margin-top: 324px;
+      
+    }
