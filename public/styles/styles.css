@@ -58,6 +58,7 @@ a {
   color: rgb(36, 122, 235);
   font-size: xx-large;
   box-sizing: border-box;
+  font-weight: bolder;
 }
 
 .bigcontainer .flipcontainer div.front {
