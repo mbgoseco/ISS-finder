@@ -24,7 +24,7 @@ $.ajax({
       id: 'mapbox.streets'
     }).addTo(mymap);
     issMarker = L.marker([issCoords.lat, issCoords.lng]).addTo(mymap);
-    issCirc = L.circle([issCoords.lat, issCoords.lng], {radius: 2270000}).addTo(mymap);
+    issCirc = L.circle([issCoords.lat, issCoords.lng], { radius: 2270000 }).addTo(mymap);
     issMapUpdate();
   }).catch(error => console.error(error));
 console.log('ISS coords: ', issCoords);
@@ -76,6 +76,29 @@ function issMapUpdate() {
   setTimeout(issMapUpdate, 5000);
 }
 
+function getWeather() {
+  $.ajax({
+    url: '/userLoc',
+    method: 'GET'
+  })
+    .then(location => {
+      userLoc.lat = location.lat;
+      userLoc.lng = location.lng;
+
+      return $.get('/weather', { data: location })
+    })
+    .then(results => {
+      console.log('current forecast ' + results.forecast)
+      console.log('visibility is ' + results.visibility)
+      console.log('windgusts are ' + results.windGust)
+      console.log('on the minute ' + results.minutely)
+      console.log('hourly forecast ' + results.hourly)
+      console.log('daily forecast ' + results.daily)
+    })
+    .catch(error => console.error(error))
+}
+getWeather();
+
 // On search submit, get location data, measure distance to ISS, and show results if visible or not
 $('#searchForm').on('submit', getSearchLoc);
 
@@ -100,7 +123,7 @@ function getSearchLoc(event) {
   $.ajax({
     url: '/search',
     method: 'GET',
-    data: {data: input}
+    data: { data: input }
   })
     .then(location => {
       locationCoords.lat = location.lat;
@@ -128,3 +151,4 @@ function checkRange(lat, lng) {
   console.log('distance: ', distance);
   return distance;
 }
+
