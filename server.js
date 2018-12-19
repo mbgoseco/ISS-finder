@@ -32,6 +32,7 @@ app.get('/', (req, res) => {
 app.get('/userLoc', getUserLoc);
 app.get('/userAddress', getUserAddress);
 app.get('/issLoc', getISSLoc);
+app.get('/issPasses', getPasses);
 app.get('/search', getInputLoc);
 
 function getUserLoc(req, res) {
@@ -74,6 +75,18 @@ function getISSLoc(req, res) {
     })
     .then(iss => {
       res.send([iss]);
+    })
+    .catch(error => handleError(error, res));
+}
+
+function getPasses(req, res) {
+  console.log('got to ISS passes');
+  let loc = req.query.data;
+  const url = `http://api.open-notify.org/iss-pass.json?lat=${loc.lat}&lon=${loc.lng}&n=5`;
+  return superagent.get(url)
+    .then(data => {
+      const result = data.body;
+      res.send(result);
     })
     .catch(error => handleError(error, res));
 }
