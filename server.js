@@ -26,6 +26,9 @@ function handleError(err, res) {
 app.get('/', (req, res) => {
   res.render('./index');
 });
+// app.get('/home', (req, res) => {
+//   res.render('./home');
+// });
 app.get('/userLoc', getUserLoc);
 app.get('/userAddress', getUserAddress);
 app.get('/issLoc', getISSLoc);
