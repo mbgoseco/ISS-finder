@@ -128,6 +128,7 @@ nav ul img {
     width: 85%;
     height: 75vh;
     margin-bottom: 2vh;
+    border-radius: 50%;
 }
 .container2 {
   margin: 0 auto;
