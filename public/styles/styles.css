@@ -182,8 +182,41 @@ nav ul img {
   font-style: italic;
 }
 
+.searchContainer {
+  width: 100vw;
+  height: 13vh;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.25em;
+  margin: 14px auto;
+}
 
+#searchLabel {
+  padding-bottom: 3vh;
+}
 
+#inputLoc {
+  border-radius: 7px;
+  box-shadow: 0px 0px 35px yellow;
+  background: transparent;
+  border: transparent;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 1em;
+  padding: 5px;
+}
+
+#locButton {
+  width: 7vw;
+  padding: 6px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 35px #6d00ff;
+  background: transparent;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+}
 
 .box .innerbox2 {
   width: 100%;
