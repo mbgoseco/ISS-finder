@@ -176,7 +176,7 @@ nav ul img {
   display: flex;
   justify-content: center;
   /* align-items: center; */
-  margin-top: 2vw;
+  margin-top: 10vw;
 
 }
 
@@ -232,7 +232,7 @@ nav ul img {
 }
 
 #searchLabel {
-  padding-bottom: 3vh;
+  padding-bottom: 8vh;
   color: whitesmoke;
   font-size: xx-large;
 }
@@ -331,6 +331,7 @@ nav ul img {
   width: 100%;
   height: 75vh; 
 } */
+
 
 footer {
   height: 33vh;
