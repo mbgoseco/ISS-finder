@@ -226,22 +226,25 @@ nav ul img {
 
 #inputLoc {
   border-radius: 7px;
-  box-shadow: 0px 0px 35px yellow;
+  box-shadow: 0px 0px 35px rgb(36, 122, 235);
   background: transparent;
   border: transparent;
   text-align: center;
-  color: rgb(255, 255, 255);
-  font-size: 1em;
-  padding: 5px;
+  color: white;
+  font-size: 2em;
+  font-weight: bolder;
+  padding: 6px;
 }
 
 #locButton {
   /* width: 7vw; */
   padding: 6px;
+  padding-bottom: 1px;
   border-radius: 8px;
-  box-shadow: 0px 0px 35px #6d00ff;
+  box-shadow: 0px 0px 35px  rgb(36, 122, 235);
   background: transparent;
   color: white;
+  font-size: 2em;
   font-family: sans-serif;
   font-weight: bold;
 }
