@@ -24,7 +24,7 @@ $.ajax({
       id: 'mapbox.streets'
     }).addTo(mymap);
     issMarker = L.marker([issCoords.lat, issCoords.lng]).addTo(mymap);
-    issCirc = L.circle([issCoords.lat, issCoords.lng], { radius: 2270000 }).addTo(mymap);
+    issCirc = L.circle([issCoords.lat, issCoords.lng], {radius: 2270000}).addTo(mymap);
     issMapUpdate();
   }).catch(error => console.error(error));
 console.log('ISS coords: ', issCoords);
@@ -40,23 +40,44 @@ $.ajax({
     return $.get('/userAddress', {data: location})
   })
   .then(address => {
+    userLoc.address = address;
     console.log('address: ', address);
+
     range = checkRange(userLoc.lat, userLoc.lng);
+    console.log('range: ', range);
 
     if (range <= 2270000) {
-      $('.mid').text(`Your current location at ${address} is currenty in viewable range. Go grab a telescope and look for it!`);
+      $('.mid').text(`Your current location at ${userLoc.address} is currenty in viewable range. Go grab a telescope and look for it!`);
     } else {
-      $('#mid-ul').text(`You current location at ${address} is not in viewable range of the ISS. The next pass will be on:`);
-      $.getJSON(`http://api.open-notify.org/iss-pass.json?lat=${userLoc.lat}&lon=${userLoc.lng}&n=5&callback=?`, function(data) {
-        data.response.forEach(d => {
-          let date = new Date(d.risetime*1000);
-          $('#mid-ul').append('<li>' + date.toString() + '</li>');
-        });
-      });
+      $('#mid-ul').text(`You current location at ${userLoc.address} is not in viewable range of the ISS. The next pass will be on:`);
     }
   })
   .catch(error => console.error(error));
 
+$.ajax({
+  url: '/userLoc',
+  method: 'GET'
+})
+  .then(location => {
+    userLoc.lat = location.lat;
+    userLoc.lng = location.lng;
+    return $.get('/issPasses', {data: location})
+  })
+  .then(passes => {
+    console.log('passes: ', passes.response);
+    passes.response.forEach(d => {
+      let date = new Date(d.risetime*1000);
+      console.log(date);
+      $('#mid-ul').append(`<li>${date}</li>`);
+    });
+  })
+
+
+
+
+
+
+  
 console.log('user location: ', userLoc);
 
 // Updates the map every 5 seconds
@@ -75,29 +96,6 @@ function issMapUpdate() {
     }).catch(error => console.error(error));
   setTimeout(issMapUpdate, 5000);
 }
-
-function getWeather() {
-  $.ajax({
-    url: '/userLoc',
-    method: 'GET'
-  })
-    .then(location => {
-      userLoc.lat = location.lat;
-      userLoc.lng = location.lng;
-
-      return $.get('/weather', { data: location })
-    })
-    .then(results => {
-      console.log('current forecast ' + results.forecast)
-      console.log('visibility is ' + results.visibility)
-      console.log('windgusts are ' + results.windGust)
-      console.log('on the minute ' + results.minutely)
-      console.log('hourly forecast ' + results.hourly)
-      console.log('daily forecast ' + results.daily)
-    })
-    .catch(error => console.error(error))
-}
-getWeather();
 
 // On search submit, get location data, measure distance to ISS, and show results if visible or not
 $('#searchForm').on('submit', getSearchLoc);
@@ -123,7 +121,7 @@ function getSearchLoc(event) {
   $.ajax({
     url: '/search',
     method: 'GET',
-    data: { data: input }
+    data: {data: input}
   })
     .then(location => {
       locationCoords.lat = location.lat;
@@ -151,4 +149,3 @@ function checkRange(lat, lng) {
   console.log('distance: ', distance);
   return distance;
 }
-
