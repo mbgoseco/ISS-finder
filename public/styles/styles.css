@@ -6,12 +6,12 @@ body {
   font-family: 'Poiret One', cursive;
 }
 
-a {
-  color: white;
+h2 {
+  padding: 1vw;
 }
 
-h3 {
-  font-family: 'Oxygen Mono', monospace;
+a {
+  color: white;
 }
 
 #introp {
@@ -20,11 +20,6 @@ h3 {
   color: whitesmoke;
   font-weight: bolder;
   font-size: xx-large;
-  font-family: 'Oxygen Mono', monospace;
-}
-
-.current {
-  font-family: 'Oxygen Mono', monospace;
 }
 
 #authors {
@@ -33,7 +28,6 @@ h3 {
   color: #e40dae;
   font-weight: bolder;
   font-size: xx-large;
-  font-family: 'Oxygen Mono', monospace;
 }
 
 #ryna, #andrew, #mike, #regan {
@@ -57,8 +51,7 @@ h3 {
 }
 
 li {
-  padding: 5px;
-  font-family: 'Oxygen Mono', monospace;
+  padding-top: 2vw;
 }
 
 .back {
@@ -161,9 +154,6 @@ nav ul img {
 }
 .box {
   margin: 10px;
-  /* width: 30%;
-  height: 100%;
-  display: flex; */
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -174,23 +164,23 @@ nav ul img {
 }
 
  .box .innerbox1 {
-   width: 100%;
-   height: 60%;
+   /* width: 100%;
+   height: 60%; */
    background:transparent;
 }
 
 .left, .mid, .right {
   color: white;
   font-weight: bold;
+  width: 35vw;
 }
 
 .box .separate h2 {
   color: deeppink;
   text-align: center;
   font-size: xx-large;
-  font-family: 'Oxygen Mono', monospace;
+  font-family: -webkit-body;
 }
-
 
 .innerbox2 p {
   color: deeppink;
@@ -321,10 +311,19 @@ nav ul img {
     font-size: large;
     text-align: center;
     padding: 1vw;
-    width: 31vw;
-    height: 28vh;
   }
 
-  /* #right-ul {
-    padding: 2.5vw;
-  } */
+  ul#mid-ul {
+    font-size: xx-large;
+    padding: 2vw;
+}
+
+ul#right-ul {
+  font-size: 3em;
+  padding: 5vw;
+}
+
+ul#left-ul {
+  font-size: x-large;
+  padding: 5vw;
+}
