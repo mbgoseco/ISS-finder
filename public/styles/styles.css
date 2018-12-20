@@ -122,9 +122,8 @@ div.back {
   to {
     background-position: -20% 1vw, -1000px 0px, -500px 0px;
   }
-}
 
-nav {
+header {
   background: transparent;
   height: 10vw;
   width: 100%;
@@ -132,7 +131,7 @@ nav {
   box-shadow: 0 5px 5px #ffa8e5d7;;
 }
 
-nav li {
+header li {
   list-style: none;
   font-weight: bolder;
   color: #ffa8e5d7;
@@ -140,17 +139,33 @@ nav li {
   font-size: 4vw;
 }
 
-nav ul li a {
+header ul li a {
   text-decoration: none;
   color: #ffa8e5d7;
   font-size: 2vw;
 }
 
-nav ul img {
-
-
+header ul img {
   display: block;
   margin: 0 auto;
+}
+
+nav {
+  width: 100vw;
+  margin-top: 5vh;
+  height: 9vh;
+  text-align: center;
+  font-size: 8vh;
+}
+
+.scroll-link {
+  text-decoration: none;
+  box-shadow: 0 0 35px mediumpurple;
+  border-radius: 23px;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: 0.5vh;
+  padding-bottom: 0.5vh;
 }
 
 .mapContainer {

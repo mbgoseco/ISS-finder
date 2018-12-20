@@ -51,7 +51,7 @@ async function getUserData() {
       range = checkRange(userLoc.lat, userLoc.lng);
       console.log('range: ', range);
 
-      $('#left-ul').append(`<li class="current">Current weather for ${userLoc.address}:</li>`);
+      $('#left-ul').text(`Weather for ${userLoc.address}:`);
       if (range <= 2270000) {
         $('#mid-ul').append(`<li class="current"> ${userLoc.address} is currenty in viewable range. Go grab a telescope and look for it!  The next passes are on:</li>`);
       } else {
@@ -227,7 +227,7 @@ async function getSearchLoc(event) {
     data: {data: locationCoords}
     })
     .then(results => {
-      $('#left-ul').text(`Current weather for ${locationCoords.address}:`);
+      $('#left-ul').text(`Weather for ${locationCoords.address}:`);
       $('#left-ul').children().remove();
       $('#left-ul').append(`<li class="fadeIn">Your current forecast is ${results.forecast}</li>`);
       if (results.forecast === 'Mostly Cloudy') {
@@ -243,3 +243,29 @@ async function getSearchLoc(event) {
     })
     .catch(error => console.error(error))  
 }
+
+// Enables smooth scrolling on page
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $('.scroll-link').on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      let hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = '';
+      });
+    } // End if
+  });
+});
