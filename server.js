@@ -164,8 +164,8 @@ function Location(data) {
 function Weather(data) {
   this.forecast = data.currently.summary;
   this.visibility = data.currently.visibility;
-  this.windGust = data.currently.windGust;
   this.minutely = data.minutely.summary;
   this.hourly = data.hourly.summary;
   this.daily = data.daily.summary;
 }
+

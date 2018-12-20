@@ -37,7 +37,7 @@ $.ajax({
   .then(location => {
     userLoc.lat = location.lat;
     userLoc.lng = location.lng;
-    return $.get('/userAddress', {data: location})
+    return $.get('/userAddress', { data: location })
   })
   .then(address => {
     userLoc.address = address;
@@ -104,6 +104,39 @@ $.ajax({
     });
   })
   .catch(error => console.error(error));
+
+function getWeather() {
+  $.ajax({
+    url: '/userLoc',
+    method: 'GET'
+  })
+    .then(location => {
+      userLoc.lat = location.lat;
+      userLoc.lng = location.lng;
+
+      return $.get('/weather', { data: location })
+    })
+    .then(results => {
+      $('#left-ul').append(`<li>Your current forecast is ${results.forecast}</li>`);
+      if (results.forecast === 'Mostly Cloudy') {
+        $('#weather').attr("src", "/styles/assets/cloudy.gif");
+      } else if (results.forecast === 'Overcast') {
+        $('#weather').attr("src", "/styles/assets/overcast.png");
+      } else if (results.forecast === 'Rain') {
+        $('#weather').attr("src", "/styles/assets/rain.png");
+      };
+
+
+      $('#left-ul').append(`<li>With a current visibility of ${results.visibility}</li>`);
+
+      $('#left-ul').append(`<li>Your current hourly forecast is ${results.hourly}</li>`);
+      $('#left-ul').append(`<li>Your current daily summary is ${results.daily}</li>`);
+
+
+    })
+    .catch(error => console.error(error))
+}
+getWeather();
 
 // On search submit, get location data, measure distance to ISS, and show results if visible or not
 $('#searchForm').on('submit', getSearchLoc);
