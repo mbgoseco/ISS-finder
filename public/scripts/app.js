@@ -37,7 +37,7 @@ $.ajax({
   .then(location => {
     userLoc.lat = location.lat;
     userLoc.lng = location.lng;
-    return $.get('/userAddress', {data: location})
+    return $.get('/userAddress', { data: location })
   })
   .then(address => {
     console.log('address: ', address);
@@ -47,9 +47,9 @@ $.ajax({
       $('.mid').text(`Your current location at ${address} is currenty in viewable range. Go grab a telescope and look for it!`);
     } else {
       $('#mid-ul').text(`You current location at ${address} is not in viewable range of the ISS. The next pass will be on:`);
-      $.getJSON(`http://api.open-notify.org/iss-pass.json?lat=${userLoc.lat}&lon=${userLoc.lng}&n=5&callback=?`, function(data) {
+      $.getJSON(`http://api.open-notify.org/iss-pass.json?lat=${userLoc.lat}&lon=${userLoc.lng}&n=5&callback=?`, function (data) {
         data.response.forEach(d => {
-          let date = new Date(d.risetime*1000);
+          let date = new Date(d.risetime * 1000);
           $('#mid-ul').append('<li>' + date.toString() + '</li>');
         });
       });
@@ -88,12 +88,22 @@ function getWeather() {
       return $.get('/weather', { data: location })
     })
     .then(results => {
-      console.log('current forecast ' + results.forecast)
-      console.log('visibility is ' + results.visibility)
-      console.log('windgusts are ' + results.windGust)
-      console.log('on the minute ' + results.minutely)
-      console.log('hourly forecast ' + results.hourly)
-      console.log('daily forecast ' + results.daily)
+      $('#left-ul').append(`<li>Your current forecast is ${results.forecast}</li>`);
+      if (results.forecast === 'Mostly Cloudy') {
+        $('#weather').attr("src", "/styles/assets/cloudy.gif");
+      } else if (results.forecast === 'Overcast') {
+        $('#weather').attr("src", "/styles/assets/overcast.png");
+      } else if (results.forecast === 'Rain') {
+        $('#weather').attr("src", "/styles/assets/rain.png");
+      };
+
+
+      $('#left-ul').append(`<li>With a current visibility of ${results.visibility}</li>`);
+
+      $('#left-ul').append(`<li>Your current hourly forecast is ${results.hourly}</li>`);
+      $('#left-ul').append(`<li>Your current daily summary is ${results.daily}</li>`);
+
+
     })
     .catch(error => console.error(error))
 }
