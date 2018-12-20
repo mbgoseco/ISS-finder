@@ -131,7 +131,7 @@ function getInputLoc(req, res) {
     }).catch(error => handleError(error, res));
 }
 
-// Models 
+// Models
 
 function UserLoc(data) {
   this.lat = data.lat;
@@ -150,10 +150,10 @@ function Location(data) {
 }
 
 function Weather(data) {
-this.forecast = data.currently.summary;
-this.visibility = data.currently.visibility;
-this.windGust = data.currently.windGust;
-this.minutely = data.minutely.summary;
-this.hourly = data.hourly.summary;
-this.daily = data.daily.summary;
+  this.forecast = data.currently.summary;
+  this.visibility = data.currently.visibility;
+  this.windGust = data.currently.windGust;
+  this.minutely = data.minutely.summary;
+  this.hourly = data.hourly.summary;
+  this.daily = data.daily.summary;
 }
