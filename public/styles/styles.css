@@ -10,6 +10,10 @@ h2 {
   padding: 1vw;
 }
 
+h3 {
+  font-family: 'Oxygen Mono', monospace;
+}
+
 a {
   color: white;
 }
@@ -20,6 +24,11 @@ a {
   color: whitesmoke;
   font-weight: bolder;
   font-size: xx-large;
+  font-family: 'Oxygen Mono', monospace;
+}
+
+.current {
+  font-family: 'Oxygen Mono', monospace;
 }
 
 #authors {
@@ -28,6 +37,7 @@ a {
   color: #e40dae;
   font-weight: bolder;
   font-size: xx-large;
+  font-family: 'Oxygen Mono', monospace;
 }
 
 #ryna,
@@ -55,6 +65,7 @@ a {
 
 li {
   padding-top: 2vw;
+  font-family: 'Oxygen Mono', monospace;
 }
 
 .back {
@@ -196,7 +207,7 @@ nav ul img {
   color: deeppink;
   text-align: center;
   font-size: xx-large;
-  font-family: -webkit-body;
+  font-family: 'Oxygen Mono', monospace;
 }
 
 .innerbox2 p {
