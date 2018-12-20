@@ -51,7 +51,7 @@ a {
 }
 
 li {
-  padding-bottom: 1vw;
+  padding-top: 2vw;
 }
 
 .back {
@@ -313,6 +313,17 @@ nav ul img {
     padding: 1vw;
   }
 
-  /* #right-ul {
-    padding: 2.5vw;
-  } */
+  ul#mid-ul {
+    font-size: xx-large;
+    padding: 2vw;
+}
+
+ul#right-ul {
+  font-size: 3em;
+  padding: 5vw;
+}
+
+ul#left-ul {
+  font-size: x-large;
+  padding: 5vw;
+}
