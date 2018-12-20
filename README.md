@@ -1,7 +1,7 @@
 # ISS FINDER
 
 * **Author**: Michael Goseco && Regan Dufort && Ryna Truong && Andrew Hinojosa
-* **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+* **Version**: 1.4.40
 
 ## Overview
 
@@ -24,7 +24,7 @@ ISS Finder is an application that allows you to find out where the ISS satellite
 
 * Languages: Javascript , JSON , HTML , CSS
 * Libraries: Node.js , jQuery
-* Packages: Node_Modules
+* Packages: Node_Modules: express, cors, superagent, jshint, ejs
 
 ## API Endpoints With Samples
 
