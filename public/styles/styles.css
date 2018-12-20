@@ -15,7 +15,7 @@ h3 {
 }
 
 a {
-  color: white;
+  color: white;  
 }
 
 #introp {
@@ -326,8 +326,6 @@ nav ul img {
   transform: perspective(600px) rotateY(0deg);
 
 }
-
-
 
 /* main {
   width: 100%;
