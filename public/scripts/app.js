@@ -29,7 +29,7 @@ $.ajax({
   }).catch(error => console.error(error));
 console.log('ISS coords: ', issCoords);
 
-// Get user coordinates
+// Get user coordinates, determine range between user and ISS, then display results
 $.ajax({
   url: '/userLoc',
   method: 'GET'
@@ -47,13 +47,14 @@ $.ajax({
     console.log('range: ', range);
 
     if (range <= 2270000) {
-      $('.mid').text(`Your current location at ${userLoc.address} is currenty in viewable range. Go grab a telescope and look for it!`);
+      $('#mid-ul').text(`Your current location at ${userLoc.address} is currenty in viewable range. Go grab a telescope and look for it! The next passes are on:`);
     } else {
-      $('#mid-ul').text(`You current location at ${userLoc.address} is not in viewable range of the ISS. The next pass will be on:`);
+      $('#mid-ul').text(`You current location at ${userLoc.address} is not in viewable range of the ISS. The next passes will be on:`);
     }
   })
   .catch(error => console.error(error));
 
+// Appends ISS pass date/times to results
 $.ajax({
   url: '/userLoc',
   method: 'GET'
@@ -67,17 +68,11 @@ $.ajax({
     console.log('passes: ', passes.response);
     passes.response.forEach(d => {
       let date = new Date(d.risetime*1000);
-      console.log(date);
       $('#mid-ul').append(`<li>${date}</li>`);
     });
   })
+  .catch(error => console.error(error));
 
-
-
-
-
-
-  
 console.log('user location: ', userLoc);
 
 // Updates the map every 5 seconds
@@ -134,11 +129,32 @@ function getSearchLoc(event) {
       console.log('search address: ', locationCoords.address);
 
       if (range <= 2270000) {
-        console.log('search is in range', range);
+        $('#mid-ul').text(`Your search at ${location.address} is currenty in viewable range. Go grab a telescope and look for it! The next passes are on:`);
       } else {
-        console.log('search not in range', range);
+        $('#mid-ul').text(`Your search at ${location.address} is not in viewable range of the ISS. The next passes will be on:`);
       }
     }).catch(error => console.error(error));
+
+  $('#mid-ul').children().remove();
+
+  $.ajax({
+    url: '/search',
+    method: 'GET',
+    data: {data: input}
+  })
+    .then(location => {
+      userLoc.lat = location.lat;
+      userLoc.lng = location.lng;
+      return $.get('/issPasses', {data: location})
+    })
+    .then(passes => {
+      console.log('passes: ', passes.response);
+      passes.response.forEach(d => {
+        let date = new Date(d.risetime*1000);
+        $('#mid-ul').append(`<li>${date}</li>`);
+      });
+    })
+    .catch(error => console.error(error));
 }
 
 function checkRange(lat, lng) {
