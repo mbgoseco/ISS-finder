@@ -22,8 +22,12 @@ async function makeMap() {
         maxZoom: 18,
         id: 'mapbox.streets'
       }).addTo(mymap);
-      issMarker = L.marker([issCoords.lat, issCoords.lng]).addTo(mymap);
-      issCirc = L.circle([issCoords.lat, issCoords.lng], {radius: 2270000}).addTo(mymap);
+    let ISSicon = L.icon({
+      iconUrl: '/styles/icons/ISS-icon.png',
+      iconSize: [55, 55],
+    });
+      issMarker = L.marker([issCoords.lat, issCoords.lng], {icon: ISSicon}).addTo(mymap);
+      issCirc = L.circle([issCoords.lat, issCoords.lng], {radius: 2270000, color: 'red', weight: 1, fillColor: '#f03', fillOpacity: 0.15}).addTo(mymap);
       issMapUpdate();
     }).catch(error => console.error(error));
   console.log('ISS coords: ', issCoords);
