@@ -88,9 +88,22 @@ function issMapUpdate() {
       issMarker.setLatLng([issCoords.lat, issCoords.lng]);
       issCirc.setLatLng([issCoords.lat, issCoords.lng]);
 
-    }).catch(error => console.error(error));
+    })
+    .catch(error => console.error(error));
   setTimeout(issMapUpdate, 5000);
 }
+
+// Gets a list of the current ISS crew
+$.ajax({
+  url: '/issCrew',
+  method: 'GET',
+})
+  .then(crew => {
+    crew.forEach(person => {
+      $('#right-ul').append(`<li>${person.name}</li>`);
+    });
+  })
+  .catch(error => console.error(error));
 
 // On search submit, get location data, measure distance to ISS, and show results if visible or not
 $('#searchForm').on('submit', getSearchLoc);
@@ -100,6 +113,7 @@ function getSearchLoc(event) {
   let input = $('#inputLoc').val();
   console.log('input: ', input);
 
+  // Get ISS location
   $.ajax({
     url: '/issLoc',
     method: 'GET',
@@ -112,7 +126,7 @@ function getSearchLoc(event) {
       issCirc.setLatLng([issCoords.lat, issCoords.lng]);
 
     }).catch(error => console.error(error));
-
+  // Then get search location and measure distance, then display results
   $.ajax({
     url: '/search',
     method: 'GET',
@@ -136,7 +150,7 @@ function getSearchLoc(event) {
     }).catch(error => console.error(error));
 
   $('#mid-ul').children().remove();
-
+  // Then append next ISS passes to results
   $.ajax({
     url: '/search',
     method: 'GET',
@@ -155,6 +169,9 @@ function getSearchLoc(event) {
       });
     })
     .catch(error => console.error(error));
+
+  // Get weather for searched location
+
 }
 
 function checkRange(lat, lng) {
