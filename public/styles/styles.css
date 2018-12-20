@@ -14,12 +14,21 @@ a {
   color: white;
 }
 
+h3 {
+  font-family: 'Oxygen Mono', monospace;
+}
+
 #introp {
   padding: 60px;
   text-align: center;
   color: whitesmoke;
   font-weight: bolder;
   font-size: xx-large;
+  font-family: 'Oxygen Mono', monospace;
+}
+
+.current {
+  font-family: 'Oxygen Mono', monospace;
 }
 
 #authors {
@@ -28,6 +37,7 @@ a {
   color: #e40dae;
   font-weight: bolder;
   font-size: xx-large;
+  font-family: 'Oxygen Mono', monospace;
 }
 
 #ryna, #andrew, #mike, #regan {
@@ -51,7 +61,8 @@ a {
 }
 
 li {
-  padding-bottom: 1vw;
+  padding-top: 2vw;
+  font-family: 'Oxygen Mono', monospace;
 }
 
 .back {
@@ -179,8 +190,9 @@ nav ul img {
   color: deeppink;
   text-align: center;
   font-size: xx-large;
-  font-family: -webkit-body;
+  font-family: 'Oxygen Mono', monospace;
 }
+
 
 .innerbox2 p {
   color: deeppink;
