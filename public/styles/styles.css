@@ -46,6 +46,10 @@ a {
   background-image: url('../styles/assets/Capture.PNG');
 }
 
+li {
+  padding: 5px;
+}
+
 .back {
   padding: 30px;
   text-align: center;
@@ -139,7 +143,7 @@ nav ul img {
   width: 90%; */
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   margin-top: 2vw;
   
 }
@@ -300,8 +304,14 @@ nav ul img {
   background-size: cover; 
   }
 
-  #mid-ul {
+  #mid-ul, #right-ul, #left-ul {
     font-size: large;
     text-align: center;
     padding: 1vw;
+    width: 31vw;
+    height: 28vh;
   }
+
+  /* #right-ul {
+    padding: 2.5vw;
+  } */

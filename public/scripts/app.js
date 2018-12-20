@@ -51,7 +51,7 @@ async function getUserData() {
       if (range <= 2270000) {
         $('#mid-ul').text(`Your current location at ${userLoc.address} is currenty in viewable range. Go grab a telescope and look for it!  The next passes are on:`);
       } else {
-        $('#mid-ul').text(`You current location at ${userLoc.address} is not in viewable range of the ISS. The next passes will be on:`);
+        $('#mid-ul').text(`Your current location at ${userLoc.address} is not in viewable range of the ISS. The next passes will be on:`);
       }
     })
     .catch(error => console.error(error));
