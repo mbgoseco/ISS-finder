@@ -35,23 +35,24 @@ app.get('/issLoc', getISSLoc);
 app.get('/issPasses', getPasses);
 app.get('/search', getInputLoc);
 app.get('/weather', fetchWeather );
+app.get('/issCrew', getCrew);
 
 function fetchWeather(req,res) {
   console.log('made it to the weather function');
- 
- let weatherinfo = req;
- console.log(weatherinfo);
+
+  let weatherinfo = req;
+  console.log(weatherinfo);
   const url = `https://api.darksky.net/forecast/${process.env.WEATHER_API_KEY}/${req.query.data.lat},${req.query.data.lng}`;
-  
+
   return superagent.get(url)
     .then(data => {
       const weatherSummaries = new Weather(data.body);
       console.log(data.body);
-        return weatherSummaries;
-      })
-      .then(results => {
-         res.send(results);
-      })
+      return weatherSummaries;
+    })
+    .then(results => {
+      res.send(results);
+    })
     .catch(error => handleError(error, res));
 }
 
@@ -129,6 +130,17 @@ function getInputLoc(req, res) {
       console.log(loc);
       res.send(loc);
     }).catch(error => handleError(error, res));
+}
+
+function getCrew(req, res) {
+  console.log('got to Crew');
+  const url = 'http://api.open-notify.org/astros.json';
+  return superagent.get(url)
+    .then(data => {
+      const crew = data.body.people;
+      res.send(crew);
+    })
+    .catch(error => handleError(error, res));
 }
 
 // Models
