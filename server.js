@@ -32,25 +32,27 @@ app.get('/', (req, res) => {
 app.get('/userLoc', getUserLoc);
 app.get('/userAddress', getUserAddress);
 app.get('/issLoc', getISSLoc);
+app.get('/issPasses', getPasses);
 app.get('/search', getInputLoc);
 app.get('/weather', fetchWeather );
+app.get('/issCrew', getCrew);
 
 function fetchWeather(req,res) {
   console.log('made it to the weather function');
- 
- let weatherinfo = req;
- console.log(weatherinfo);
+
+  let weatherinfo = req;
+  console.log(weatherinfo);
   const url = `https://api.darksky.net/forecast/${process.env.WEATHER_API_KEY}/${req.query.data.lat},${req.query.data.lng}`;
-  
+
   return superagent.get(url)
     .then(data => {
       const weatherSummaries = new Weather(data.body);
       console.log(data.body);
-        return weatherSummaries;
-      })
-      .then(results => {
-         res.send(results);
-      })
+      return weatherSummaries;
+    })
+    .then(results => {
+      res.send(results);
+    })
     .catch(error => handleError(error, res));
 }
 
@@ -98,6 +100,18 @@ function getISSLoc(req, res) {
     .catch(error => handleError(error, res));
 }
 
+function getPasses(req, res) {
+  console.log('got to ISS passes');
+  let loc = req.query.data;
+  const url = `http://api.open-notify.org/iss-pass.json?lat=${loc.lat}&lon=${loc.lng}&n=5`;
+  return superagent.get(url)
+    .then(data => {
+      const result = data.body;
+      res.send(result);
+    })
+    .catch(error => handleError(error, res));
+}
+
 function getInputLoc(req, res) {
   console.log('got to search')
   let input = req.query.data;
@@ -118,7 +132,18 @@ function getInputLoc(req, res) {
     }).catch(error => handleError(error, res));
 }
 
-// Models 
+function getCrew(req, res) {
+  console.log('got to Crew');
+  const url = 'http://api.open-notify.org/astros.json';
+  return superagent.get(url)
+    .then(data => {
+      const crew = data.body.people;
+      res.send(crew);
+    })
+    .catch(error => handleError(error, res));
+}
+
+// Models
 
 function UserLoc(data) {
   this.lat = data.lat;
@@ -137,10 +162,10 @@ function Location(data) {
 }
 
 function Weather(data) {
-this.forecast = data.currently.summary;
-this.visibility = data.currently.visibility;
-
-this.minutely = data.minutely.summary;
-this.hourly = data.hourly.summary;
-this.daily = data.daily.summary;
+  this.forecast = data.currently.summary;
+  this.visibility = data.currently.visibility;
+  this.minutely = data.minutely.summary;
+  this.hourly = data.hourly.summary;
+  this.daily = data.daily.summary;
 }
+

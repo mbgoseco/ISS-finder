@@ -1,8 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  width: 100%;
+  /* height: 100%;
+  width: 100%; */
   font-family: 'Poiret One', cursive;
 }
 
@@ -11,16 +11,18 @@ a {
 }
 
 #introp {
-  padding: 30px;
+  padding: 60px;
   text-align: center;
-  color: white;
+  color: whitesmoke;
+  font-weight: bolder;
   font-size: xx-large;
 }
 
 #authors {
   padding: 30px;
   text-align: center;
-  color: white;
+  color: #e40dae;
+  font-weight: bolder;
   font-size: xx-large;
 }
 
@@ -58,6 +60,7 @@ a {
   color: rgb(36, 122, 235);
   font-size: xx-large;
   box-sizing: border-box;
+  font-weight: bolder;
 }
 
 .bigcontainer .flipcontainer div.front {
@@ -74,8 +77,8 @@ div.back {
 }
 
 .bigcontainer {
-  width: 100%;
-  min-height: 100%;
+  /* width: 100%;
+  min-height: 100%; */
   position: relative;
   padding: 0;
   margin: 0px auto;
@@ -98,6 +101,7 @@ nav {
 }
 nav li {
   list-style: none;
+  font-weight: bolder;
   color: #e40dae;
   text-align: center;
   font-size: 4vw;
@@ -118,22 +122,21 @@ nav ul img {
 .mapContainer {
   width: 100%;
   height: 70%;
-  box-shadow: 0px 5px 5px cyan;
+  box-shadow: 0px 5px 5px #e40dae;
   background: transparent;
   
 }
 #map {
-    padding-top: 5%;
+    padding: 20%;
+    width: 50%;
     margin: 0 auto;
-    width: 85%;
-    height: 75vh;
-    margin-bottom: 2vh;
+    margin-bottom: 13vh;
     border-radius: 50%;
 }
 .container2 {
   margin: 0 auto;
-  height: 90%;
-  width: 90%;
+  /* height: 90%;
+  width: 90%; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -142,15 +145,15 @@ nav ul img {
 }
 .box {
   margin: 10px;
-  width: 30%;
+  /* width: 30%;
   height: 100%;
-  display: flex;
+  display: flex; */
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   border-radius: 10px;
   overflow: hidden;
-  border: 3px solid midnightblue;
+  border: 3px solid rgb(36, 122, 235);
 
 }
 
@@ -158,11 +161,6 @@ nav ul img {
    width: 100%;
    height: 60%;
    background:transparent;
-}
-.box .separate {
-  width: 100%;
-  height: 10%;
-  border: 3px solid midnightblue;
 }
 
 .left, .mid, .right {
@@ -173,7 +171,7 @@ nav ul img {
 .box .separate h2 {
   color: deeppink;
   text-align: center;
-  font-size: 4vw;
+  font-size: xx-large;
   font-family: -webkit-body;
 }
 
@@ -198,6 +196,8 @@ nav ul img {
 
 #searchLabel {
   padding-bottom: 3vh;
+  color: whitesmoke;
+  font-size: xx-large;
 }
 
 #inputLoc {
@@ -212,7 +212,7 @@ nav ul img {
 }
 
 #locButton {
-  width: 7vw;
+  /* width: 7vw; */
   padding: 6px;
   border-radius: 8px;
   box-shadow: 0px 0px 35px #6d00ff;
@@ -233,7 +233,7 @@ nav ul img {
   height: 55%;
   width: 100%;
   margin-top: 2vw;
-  border: 2px solid white;
+  /* border: 2px solid white; */
   display: flex;
   justify-content: center;
  
@@ -285,17 +285,23 @@ nav ul img {
 
 
 
-main {
+/* main {
   width: 100%;
   height: 75vh; 
-}
+} */
 
  footer {
   height: 33vh;
   width: 100%;
   bottom: 0;
-  border: 8px solid aquamarine;
+  /* border: 8px solid aquamarine; */
   background-image: url('../styles/assets/moondark.png'); 
   background-repeat: no-repeat;
   background-size: cover; 
+  }
+
+  #mid-ul {
+    font-size: large;
+    text-align: center;
+    padding: 1vw;
   }
