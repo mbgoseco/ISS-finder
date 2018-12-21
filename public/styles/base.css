@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');   
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poiret One', cursive;
+}
+
+h2 {
+  padding: 1vw;
+}
+
+h3 {
+  font-family: 'Oxygen Mono', monospace;
+}
+
+a {
+  color: white;  
+}
+
+li {
+  padding-top: 2vw;
+  font-family: 'Oxygen Mono', monospace;
+}
