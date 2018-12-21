@@ -243,6 +243,11 @@ nav {
   font-style: italic;
 }
 
+#weather-icon {
+  text-align: center;
+  padding: 0;
+}
+
 .searchContainer {
   width: 100vw;
   height: 13vh;
@@ -368,6 +373,7 @@ footer {
 #mid-ul,
 #right-ul,
 #left-ul {
+  font-family: 'Oxygen Mono', monospace;
   font-size: large;
   text-align: center;
   padding: 1vw;
