@@ -30,7 +30,6 @@ async function makeMap() {
       issCirc = L.circle([issCoords.lat, issCoords.lng], {radius: 2270000, color: 'red', weight: 1, fillColor: '#f03', fillOpacity: 0.15}).addTo(mymap);
       issMapUpdate();
     }).catch(error => console.error(error));
-  console.log('ISS coords: ', issCoords);
 }
 
 // Get user coordinates, determine range between user and ISS, then display results
@@ -46,10 +45,8 @@ async function getUserData() {
     })
     .then(address => {
       userLoc.address = address;
-      console.log('address: ', address);
 
       range = checkRange(userLoc.lat, userLoc.lng);
-      console.log('range: ', range);
 
       $('#left-ul').text(`Weather for ${userLoc.address}:`);
       if (range <= 2270000) {
@@ -71,7 +68,6 @@ async function getUserData() {
       return $.get('/issPasses', {data: location})
     })
     .then(passes => {
-      console.log('passes: ', passes.response);
       passes.response.forEach(d => {
         let date = new Date(d.risetime*1000);
         $('#mid-ul').append(`<li>${date}</li>`);
@@ -80,7 +76,6 @@ async function getUserData() {
     .catch(error => console.error(error));
 }
 
-console.log('user location: ', userLoc);
 
 // Updates the map every 5 seconds
 async function issMapUpdate() {
@@ -129,16 +124,10 @@ async function getWeather() {
     .then(results => {
       $('#left-ul').children().remove();
       $('#left-ul').append(`<li class="fadeIn">Your current forecast is ${results.forecast}</li>`);
-      if (results.forecast === 'Mostly Cloudy') {
-        $('#weather').attr('src', '/styles/assets/cloudy.gif');
-      } else if (results.forecast === 'Overcast') {
-        $('#weather').attr('src', '/styles/assets/overcast.png');
-      } else if (results.forecast === 'Rain') {
-        $('#weather').attr('src', '/styles/assets/rain.png');
-      }
       $('#left-ul').append(`<li class="fadeIn">With a current visibility of ${results.visibility}</li>`);
       $('#left-ul').append(`<li class="fadeIn">Your current hourly forecast is ${results.hourly}</li>`);
       $('#left-ul').append(`<li class="fadeIn">Your current daily summary is ${results.daily}</li>`);
+      $('#weather').attr('src', `/styles/assets/${results.icon.toLowerCase()}.png`);
     })
     .catch(error => console.error(error))
 }
@@ -149,7 +138,6 @@ function checkRange(lat, lng) {
   let pointB = new google.maps.LatLng(lat, lng);
 
   let distance = Math.floor(google.maps.geometry.spherical.computeDistanceBetween(pointA, pointB));
-  console.log('distance: ', distance);
   return distance;
 }
 
@@ -165,7 +153,6 @@ async function getSearchLoc(event) {
   event.preventDefault();
   window.location = '#map';
   let input = $('#inputLoc').val();
-  console.log('input: ', input);
 
   // Get ISS location
   await $.ajax({
@@ -195,7 +182,6 @@ async function getSearchLoc(event) {
       mymap.flyTo([location.lat, location.lng], 3);
 
       let range = checkRange(location.lat, location.lng);
-      console.log('search address: ', locationCoords.address);
 
       if (range <= 2270000) {
         $('#mid-ul').text(`Your search at ${location.address} is currenty in viewable range. Go grab a telescope and look for it! The next passes are on:`);
@@ -212,7 +198,6 @@ async function getSearchLoc(event) {
     })
     .then(passes => {
       $('#mid-ul').children().remove();
-      console.log('passes: ', passes.response);
       passes.response.forEach(d => {
         let date = new Date(d.risetime*1000);
         $('#mid-ul').append(`<li class="fadeIn">${date}</li>`);
@@ -230,16 +215,10 @@ async function getSearchLoc(event) {
       $('#left-ul').text(`Weather for ${locationCoords.address}:`);
       $('#left-ul').children().remove();
       $('#left-ul').append(`<li class="fadeIn">Your current forecast is ${results.forecast}</li>`);
-      if (results.forecast === 'Mostly Cloudy') {
-        $('#weather').attr('src', '/styles/assets/cloudy.gif');
-      } else if (results.forecast === 'Overcast') {
-        $('#weather').attr('src', '/styles/assets/overcast.png');
-      } else if (results.forecast === 'Rain') {
-        $('#weather').attr('src', '/styles/assets/rain.png');
-      }
       $('#left-ul').append(`<li class="fadeIn">With a current visibility of ${results.visibility}</li>`);
       $('#left-ul').append(`<li class="fadeIn">Your current hourly forecast is ${results.hourly}</li>`);
       $('#left-ul').append(`<li class="fadeIn">Your current daily summary is ${results.daily}</li>`);
+      $('#weather').attr('src', `/styles/assets/${results.icon.toLowerCase()}.png`);
     })
     .catch(error => console.error(error))  
 }

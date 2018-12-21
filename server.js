@@ -168,5 +168,6 @@ function Weather(data) {
   this.minutely = data.minutely.summary;
   this.hourly = data.hourly.summary;
   this.daily = data.daily.summary;
+  this.icon = data.currently.icon;
 }
 
