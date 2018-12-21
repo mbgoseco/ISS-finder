@@ -1,28 +1,103 @@
 body {
-    width: 100%;
+    width: 100%; 
     min-height: 100%;
-    position: relative;
-    padding: 0;
-    margin: 0px auto;
+     margin: 0;
+     padding: 0;
     background-color: #000;
-    background-image: url('../styles/assets/newEarth.png'), url('../styles/assets/empty-stars.png'), url('../styles/assets/stars4.jpg');
-    background-position: 120% 70px, 0px 0px, 0px 0px;
+    background-image: url('../styles/assets/spaceship1.png'), url('../styles/assets/empty-stars.png'), url('../styles/assets/stars4.jpg');
+    background-position: 120% 10vh, 0px 0px, 0px 0px;
     background-repeat: no-repeat, repeat, repeat;
-    animation: animate-background linear 50s infinite;
+    animation: animate-background linear 50s infinite; 
   }
     @keyframes animate-background {
-      from { background-position: 120% 70px,  0px 0px, 0px 0px;  }
-      to {background-position: -20% 70px, -1000px 0px, -500px 0px;  }
+      from { background-position: -20% 40vh, 0px 0px, 0px 0px;  }
+      to {background-position:  120% 40vh, -1000px 0px, -500px 0px;  }
 
-    }
+    } 
 
-
-    .sun {
+     .sun {
       height: 100%;
-      width: 50vh;
-      border: 3px solid white;
+      width: 54vh;
       background-image: url('../styles/assets/newsun.png'); 
       background-repeat: no-repeat;
-      margin-top: 324px;
-      
+      position: absolute;
+      top: 48vh;
+      background-size: cover;
+    
+    } 
+    /* body {
+      margin: 0;
+      padding: 0;
+      background: black;
+    } */
+
+    #container {
+      width: 18vh;
+      height: 22vh;
+      margin: 3vh auto;
+      position: relative;
+      padding: 5vh; 
+     
+      margin-right: 12vh;
+      /* right: 30vh;
+      bottom: 50vh;  */
+    } 
+     
+  #earth {
+    height: 18vh;
+    width: 18vh;
+    margin: 0 auto;
+    background: url('../styles/assets/newEarth.png') no-repeat;
+    background-size: cover;
+    animation: spin-right 50s linear infinite; 
+  }
+
+  @keyframes spin-right {
+    100% {transform: rotate(360deg);
+
     }
+  }
+
+  #iss {
+    width: 13vh;
+    height: 5vh;
+    background: url('../styles/assets/ISS.png') no-repeat;
+    background-size: cover;
+    /* border-radius: 50%; */
+    position: absolute;
+    top: 0;
+    left: 0;  
+   animation: icon 4s linear infinite; 
+    animation-direction: normal;
+  }
+
+
+  @keyframes icon {
+      
+    0% {
+      left: calc(100%-30px);
+      top: calc(100%-50px);
+      animation: ease-in-out;
+      
+    
+    } 
+
+    50% {
+      left: 75%;
+      top: 75%;
+      animation: ease-in-out;
+     
+    }
+
+     100% {
+    left: 0%;
+    top: 0%;
+  z-index: -1;
+    } 
+   
+  }  
+
+
+    
+
+ 

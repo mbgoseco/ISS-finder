@@ -1,27 +1,27 @@
-<!DOCTYPE <!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 
 <head>
-  <title>space intro</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="/styles/planet.css" />
+  <meta charset="utf-8">
+ 
+  <link rel="stylesheet" href="/styles/planet.css" />
+   <title>space intro</title>
 </head>
-<body>
-  <section class="earth">
-    <img id="img1" src="styles/assets/newEarth.png">
-
-  </section>
-
+<body> 
+  <iframe src="/styles/assets/audio.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe>
+  <div id="container">
+    <div id="earth"></div>
+    <div id="iss"></div>
+  </div>
   <section class="sun">
+  </section> 
 
-  </section>
-
-
-
-
-
-
-
+ 
 </body>
-<script src="scripts/animate.js"></script>
+<script>
+    setTimeout(function () {
+      window.location = "/home";
+    }, 25000)
+  </script>
+
 </html>
