@@ -25,11 +25,6 @@ body {
       background-size: cover;
     
     } 
-    /* body {
-      margin: 0;
-      padding: 0;
-      background: black;
-    } */
 
     #container {
       width: 18vh;
@@ -39,8 +34,6 @@ body {
       padding: 5vh; 
      
       margin-right: 12vh;
-      /* right: 30vh;
-      bottom: 50vh;  */
     } 
      
   #earth {
@@ -49,7 +42,7 @@ body {
     margin: 0 auto;
     background: url('../styles/assets/newEarth.png') no-repeat;
     background-size: cover;
-    animation: spin-right 50s linear infinite; 
+    animation: spin-right 70s linear infinite; 
   }
 
   @keyframes spin-right {
@@ -63,11 +56,10 @@ body {
     height: 5vh;
     background: url('../styles/assets/ISS.png') no-repeat;
     background-size: cover;
-    /* border-radius: 50%; */
     position: absolute;
     top: 0;
     left: 0;  
-   animation: icon 4s linear infinite; 
+   animation: icon 30s linear infinite; 
     animation-direction: normal;
   }
 
