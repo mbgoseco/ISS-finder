@@ -6,6 +6,11 @@ body {
   font-family: 'Poiret One', cursive;
 }
 
+#title {
+  font-family: 'Poiret One', cursive;
+  font-weight: bolder;
+}
+
 h2 {
   padding: 1vw;
 }
@@ -122,6 +127,7 @@ div.back {
   to {
     background-position: -20% 1vw, -1000px 0px, -500px 0px;
   }
+}
 
 header {
   background: transparent;
@@ -153,9 +159,10 @@ header ul img {
 nav {
   width: 100vw;
   margin-top: 5vh;
-  height: 9vh;
+  height: 8vh;
   text-align: center;
-  font-size: 8vh;
+  font-size: 3.5vh;
+  font-weight: bolder;
 }
 
 .scroll-link {
@@ -378,6 +385,7 @@ ul#right-ul {
 }
 
 ul#left-ul {
+  font-family: 'Oxygen Mono', monospace;
   font-size: 2em;
   padding: 1vw;
   padding-top: 40px;
