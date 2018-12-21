@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>ISS Space</title>
+  <title>ISS Finder</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
     crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
@@ -11,26 +11,24 @@
   <link rel="stylesheet" type="text/css" href="/styles/reset.css" />
   <link rel="stylesheet" type="text/css" href="/styles/styles.css" />
   <link rel="stylesheet" type="text/css" href="/styles/wickedcss.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Oxygen+Mono" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css?family=Poiret+One');
+    @import url('https://fonts.googleapis.com/css?family=Poiret+One');   
   </style>
 </head>
-<!-- <audio controls autoplay loop>
-    <source src="./Metro Boomin - Space Cadet (Instrumental).mp3" type="audio/ogg">
-    <embed src="./Metro Boomin - Space Cadet (Instrumental).mp3" autostart="true" loop="true" hidden="true"> -->
-      <!-- <iframe src="/styles/assets/Metro Boomin - Space Cadet (Instrumental).mp3" allow="autoplay" style="display:none" id="iframeAudio"> -->
-<!-- </iframe>  
-  </audio> -->
+
 <body>
   <section class="bigcontainer">
-    <nav>
-
+    <header>
       <ul>
-        <li><a href="./planet.ejs">Start Page</a></li>
-        <li class="fadeIn">ISS SPACE TRACKER </li>
-        <!-- <li><a href="">Go to bottom of page </a></li>  -->
+        <li class="fadeIn" id="title">ISS FINDER</li>
         <img src="/styles/assets/ISS.png" class="floater" alt="ISS">
       </ul>
+    </header>
+    <nav>
+      <a class="scroll-link" href="#map">Map</a>
+      <a class="scroll-link" href="#stats">Stats</a>
+      <a class="scroll-link" href="#authors">About Us</a>
     </nav>
 
     <p id="introp">The International Space Station is a space station, or a habitable artificial satellite, in low Earth orbit moving at close to 28,000 km/h. In 24 hours, the space station makes 16 orbits of Earth, traveling through 16 sunrises and sunsets so its location changes really fast! Type in your location to find out the next time it passes!
@@ -48,18 +46,16 @@
       </form>
     </section>
 
-    <main>
+    <main id="stats">
       <div class="container2">
         <div class="box left">
           <div class="separate">
             <h2>CURRENT WEATHER</h2>
           </div>
           <div class="innerbox1">
-            <ul id="left-ul"></ul>
-          </div>
-          <div class="innerbox2">
+            <ul id="left-ul" class="fadeIn"></ul>
             <ul id="bottom-ul"></ul>
-            <li><img src="" id="weather"> </li>
+            <li id="weather-icon"><img src="" id="weather"> </li>
           </div>
         </div>
 
@@ -68,10 +64,7 @@
             <h2>LOCATION RESULTS & NEXT PASSINGS</h2>
           </div>
           <div class="innerbox1">
-              <ul id="mid-ul"></ul>
-          </div>
-          <div class="innerbox2">
-            <p>Information about this title will go in this box!!!!!!</p>
+              <ul id="mid-ul" class="fadeIn"></ul>
           </div>
         </div>
 
@@ -80,10 +73,7 @@
             <h2>CURRENT ISS CREW</h2>
           </div>
           <div class="innerbox1">
-              <ul id="right-ul"></ul>
-          </div>
-          <div class="innerbox2">
-            <p>Information about this title will go in this box!!!!!!</p>
+              <ul id="right-ul" class="fadeIn"></ul>
           </div>
         </div>
       </div>
@@ -93,20 +83,20 @@
     <div class="flipcontainer">
       <div class="flipwrapper">
       <div class="flip3d">
-        <div class="back"><a href="https://github.com/bigrig72">https://github.com/bigrig72</a>PUT YOUR BIO HERE</div>
-        <div class="front" id="regan">Regan Dufort</div>
+        <div class="back"><a href="https://github.com/bigrig72">Regan Dufort</a></div>
+        <div class="front" id="regan"></div>
       </div>
       <div class="flip3d">
-          <div class="back"><a href="https://github.com/mbgoseco">https://github.com/mbgoseco</a>PUT YOUR BIO HERE</div>
-          <div class="front" id="mike">Mike Goseco</div>
+          <div class="back"><a href="https://github.com/mbgoseco">Mike Goseco</a></div>
+          <div class="front" id="mike"></div>
         </div>
         <div class="flip3d">
-            <div class="back"><a href="https://github.com/drewsview34">https://github.com/drewsview34</a><p>I have a bachelor’s degree in business management with a diverse background experience in many industries. I've driven forklifts, worked for the department of children health services, supported adults with disabilities, to making your favorite food at KFC/Taco Bell. my co-workers have referred to me out-going, energetic, reliable, approachable, a team player. I like working others and accomplishing goals. I'm a current student at code fellows and I'm look forward to applying my life skill in developing my passion to create awesome, efficient, and interactive software for everyone. </p></div>
-            <div class="front" id="andrew">Andrew Hinojosa</div>
+            <div class="back"><a href="https://github.com/drewsview34">Andrew Hinojosa</a></div>
+            <div class="front" id="andrew"></div>
           </div>
           <div class="flip3d">
-              <div class="back"><a href="https://github.com/rynnnaa">https://github.com/rynnnaa</a>PUT YOUR BIO HERE</div>
-              <div class="front" id="ryna">Ryna Truong</div>
+              <div class="back"><a href="https://github.com/rynnnaa">Ryna Truong</a></div>
+              <div class="front" id="ryna"></div>
             </div>
           </div>
     </div>

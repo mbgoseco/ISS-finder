@@ -1,7 +1,7 @@
 # ISS FINDER
 
 * **Author**: Michael Goseco && Regan Dufort && Ryna Truong && Andrew Hinojosa
-* **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+* **Version**: 1.4.42
 
 ## Overview
 
@@ -24,7 +24,7 @@ ISS Finder is an application that allows you to find out where the ISS satellite
 
 * Languages: Javascript , JSON , HTML , CSS
 * Libraries: Node.js , jQuery
-* Packages: Node_Modules
+* Packages: Node_Modules: express, cors, superagent, jshint, ejs
 
 ## API Endpoints With Samples
 
@@ -40,14 +40,14 @@ ISS Finder is an application that allows you to find out where the ISS satellite
 * 12.17.2019 1:00pm - Appilcation is able to get data now from SSI API.
 * 12.17.2019 5:00pm - Application has placeholders for the geo location, about us, and footer.
 * 12.18.2019 9:00am - Application has basic search and reverse search functionality.
-* 12.18.2019 1:00pm -
-* 12.18.2019 5:00pm -
-* 12.19.2019 9:00am -
-* 12.19.2019 1:00pm -
-* 12.19.2019 5:00pm -
-* 12.20.2019 9:00am -
-* 12.20.2019 1:00pm -
-* 12.20.2019 5:00pm -
+* 12.18.2019 1:00pm - Application displays search bar and buttom.
+* 12.18.2019 5:00pm - Application is diplaying ISS locations and client location.
+* 12.19.2019 9:00am - Application is displaying weather.
+* 12.19.2019 1:00pm - Application is displaying current ISS members.
+* 12.19.2019 5:00pm - Application has reached MVP for CSS.
+* 12.20.2019 9:00am - Application is displaying address of client.
+* 12.20.2019 1:00pm - Application has reached MVP for back end/JavaScript.
+* 12.20.2019 5:00pm - Application is displaying weather icons.
 * 12.21.2019 9:00am -
 * 12.21.2019 1:00pm -
 * 12.21.2019 5:00pm -

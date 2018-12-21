@@ -24,20 +24,21 @@ function handleError(err, res) {
 }
 
 app.get('/', (req, res) => {
+  res.render('./planet');
+});
+app.get('/home', (req, res) => {
   res.render('./index');
 });
-// app.get('/home', (req, res) => {
-//   res.render('./home');
-// });
 app.get('/userLoc', getUserLoc);
 app.get('/userAddress', getUserAddress);
 app.get('/issLoc', getISSLoc);
 app.get('/issPasses', getPasses);
 app.get('/search', getInputLoc);
-app.get('/weather', fetchWeather );
+app.get('/weather', getWeather );
 app.get('/issCrew', getCrew);
+app.get('*', (req, res) => res.status(404).send('404 Page not found'));
 
-function fetchWeather(req,res) {
+function getWeather(req,res) {
   console.log('made it to the weather function');
 
   let weatherinfo = req;
@@ -167,5 +168,6 @@ function Weather(data) {
   this.minutely = data.minutely.summary;
   this.hourly = data.hourly.summary;
   this.daily = data.daily.summary;
+  this.icon = data.currently.icon;
 }
 
