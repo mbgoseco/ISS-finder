@@ -39,16 +39,12 @@ app.get('/issCrew', getCrew);
 app.get('*', (req, res) => res.status(404).send('404 Page not found'));
 
 function getWeather(req,res) {
-  console.log('made it to the weather function');
-
   let weatherinfo = req;
-  console.log(weatherinfo);
   const url = `https://api.darksky.net/forecast/${process.env.WEATHER_API_KEY}/${req.query.data.lat},${req.query.data.lng}`;
 
   return superagent.get(url)
     .then(data => {
       const weatherSummaries = new Weather(data.body);
-      console.log(data.body);
       return weatherSummaries;
     })
     .then(results => {
@@ -71,7 +67,6 @@ function getUserLoc(req, res) {
 }
 
 function getUserAddress(req, res) {
-  console.log('got to user address');
   let loc = req.query.data;
   const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${loc.lat},${loc.lng}&key=${process.env.GOOGLE_API_KEY}`
   return superagent.get(url)
@@ -80,19 +75,16 @@ function getUserAddress(req, res) {
       return address;
     })
     .then(address => {
-      console.log(address);
       res.send(address);
     })
     .catch(error => handleError(error, res));
 }
 
 function getISSLoc(req, res) {
-  console.log('got to ISS');
   const url = 'http://api.open-notify.org/iss-now';
   return superagent.get(url)
     .then(data => {
       const issLoc = new ISS(data.body);
-      console.log(issLoc);
       return issLoc;
     })
     .then(iss => {
@@ -102,7 +94,6 @@ function getISSLoc(req, res) {
 }
 
 function getPasses(req, res) {
-  console.log('got to ISS passes');
   let loc = req.query.data;
   const url = `http://api.open-notify.org/iss-pass.json?lat=${loc.lat}&lon=${loc.lng}&n=5`;
   return superagent.get(url)
@@ -114,7 +105,6 @@ function getPasses(req, res) {
 }
 
 function getInputLoc(req, res) {
-  console.log('got to search')
   let input = req.query.data;
   const URL = `https://maps.googleapis.com/maps/api/geocode/json?address=${input}&key=${process.env.GOOGLE_API_KEY}`;
   return superagent.get(URL)
@@ -123,18 +113,15 @@ function getInputLoc(req, res) {
         res.redirect('./error');
       } else {
         let location = new Location(data.body.results[0]);
-        console.log(location);
         return location;
       }
     })
     .then(loc => {
-      console.log(loc);
       res.send(loc);
     }).catch(error => handleError(error, res));
 }
 
 function getCrew(req, res) {
-  console.log('got to Crew');
   const url = 'http://api.open-notify.org/astros.json';
   return superagent.get(url)
     .then(data => {
