@@ -40,7 +40,7 @@ header ul img {
 }
 
 nav {
-  width: 100vw;
+  /* width: 100vw; */
   margin-top: 5vh;
   height: 8vh;
   text-align: center;
@@ -139,7 +139,7 @@ nav {
 }
 
 .searchContainer {
-  width: 100vw;
+  /* width: 100vw; */
   height: 13vh;
   color: white;
   text-align: center;
