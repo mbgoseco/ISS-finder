@@ -48,9 +48,6 @@ ISS Finder is an application that allows you to find out where the ISS satellite
 * 12.20.2019 9:00am - Application is displaying address of client.
 * 12.20.2019 1:00pm - Application has reached MVP for back end/JavaScript.
 * 12.20.2019 5:00pm - Application is displaying weather icons.
-* 12.21.2019 9:00am -
-* 12.21.2019 1:00pm -
-* 12.21.2019 5:00pm -
 
 ## Credits & Collaborations
 
