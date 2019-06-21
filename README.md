@@ -2,7 +2,7 @@
 
 * **Author**: Michael Goseco && Regan Dufort && Ryna Truong && Andrew Hinojosa
 * **Version**: 1.5.44
-* **Website**: [https://iss-finder-301.herokuapp.com/]
+* **Website**: https://iss-finder-301.herokuapp.com/
 
 ## Overview
 
